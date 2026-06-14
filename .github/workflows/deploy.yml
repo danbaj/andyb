@@ -25,5 +25,5 @@ jobs:
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           local_path: ./
-          remote_path: /home/andrebajercom/www/
+          remote_path: /home/A/andrebajercom/www
           sftp_only: true
