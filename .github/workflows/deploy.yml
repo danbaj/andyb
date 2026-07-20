@@ -8,9 +8,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true  # Add this line
-    
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
     permissions:
       contents: read
 
@@ -24,6 +25,19 @@ jobs:
           server: ${{ secrets.SFTP_SERVER }}
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
+          port: 22
           local_path: ./
-          remote_path: /home/A/andrebajercom/www
+          remote_path: /home/A/andrebajercom/www    # ← keep your actual path here
           sftp_only: true
+          sftpArgs: >-
+            -o ConnectTimeout=10
+          delete_remote_files: false
+          exclude: |
+            .git
+            .git/**
+            .github
+            .github/**
+            .gitignore
+            node_modules
+            node_modules/**
+            README.md
