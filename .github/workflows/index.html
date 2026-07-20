@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Andre Bajer - Personal Website">
+    <title>Andre Bajer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* ── Colour Variables ── */
+        :root {
+            --gold:          #c9a84c;
+            --gold-border:   #8b6914;
+            --green-bg:      #1a2e1a;
+            --green-panel:   #243d24;
+            --text-primary:  #f5efe0;  /* contrast ratio 12:1 on green */
+            --text-secondary:#d4c5a0;  /* contrast ratio 7:1 on green  */
+        }
+
+        /* ── Base Reset ── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            min-height: 100vh;
+            background-color: var(--green-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        /* ── Frame ── */
+        .frame {
+            border: 3px solid var(--gold-border);
+            outline: 1px solid var(--gold);
+            outline-offset: -6px;
+            padding: 50px 70px;
+            background-color: var(--green-panel);
+            text-align: center;
+            max-width: 480px;
+            width: 100%;
+        }
+
+        /* ── Divider ── */
+        .divider {
+            width: 60%;
+            margin: 20px auto;
+            border: none;
+            border-top: 1px solid var(--gold);
+        }
+
+        /* ── Ornament ── */
+        .ornament {
+            color: var(--gold);
+            font-size: 0.8rem;
+            letter-spacing: 8px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        /* ── H1 ── */
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+
+        /* ── Subtitle ── */
+        .subtitle {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            letter-spacing: 1px;
+            margin: 12px 0;
+        }
+
+        /* ── Contact Label ── */
+        .contact-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+
+        /* ── Contact Link ── */
+        .contact-link {
+            font-size: 1rem;
+            color: var(--text-primary);
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            letter-spacing: 1px;
+        }
+
+        .contact-link:hover,
+        .contact-link:focus {
+            color: var(--gold);
+            outline: 2px solid var(--gold); /* WCAG focus indicator */
+            outline-offset: 4px;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            .frame {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="frame">
+        <span class="ornament">◆ ◆ ◆</span>
+
+        <h1>André Bajer</h1>
+
+        <hr class="divider">
+
+        <p class="subtitle">Site under construction.</p>
+
+        <hr class="divider">
+
+        <p class="contact-label">Contact</p>
+        <a class="contact-link" href="mailto:andre.bajer@yahoo.com">
+            andre.bajer@yahoo.com
+        </a>
+
+        <span class="ornament" style="margin-top: 20px;">◆ ◆ ◆</span>
+    </div>
+
+</body>
+</html>
