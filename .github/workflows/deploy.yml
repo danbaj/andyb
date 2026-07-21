@@ -37,7 +37,7 @@ jobs:
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           port: 22
-          local_path: ./dist/andyb/browser/
+          local_path: ./dist/andyb/
           remote_path: /home/A/andrebajercom/www
           sftp_only: true
           delete_remote_files: false
