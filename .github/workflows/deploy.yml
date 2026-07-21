@@ -30,11 +30,6 @@ jobs:
       - name: 🔧 Build Angular project
         run: npm run build
 
-      - name: 🧹 Remove unnecessary files
-        run: |
-          rm -rf .git
-          rm -rf .github
-
       - name: 📤 Deploy via SFTP
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
@@ -45,4 +40,4 @@ jobs:
           local_path: ./dist/andyb/browser/
           remote_path: /home/A/andrebajercom/www
           sftp_only: true
-          delete_remote_files: true
+          delete_remote_files: false
