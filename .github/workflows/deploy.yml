@@ -30,6 +30,11 @@ jobs:
       - name: 🔧 Build Angular project
         run: npm run build
 
+      - name: 📁 Move build files to deploy folder
+        run: |
+          mkdir deploy
+          cp -r dist/andyb/. deploy/
+
       - name: 📤 Deploy via SFTP
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
@@ -37,7 +42,7 @@ jobs:
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           port: 22
-          local_path: ./dist/andyb/
+          local_path: ./deploy/
           remote_path: /home/A/andrebajercom/www
           sftp_only: true
           delete_remote_files: false
