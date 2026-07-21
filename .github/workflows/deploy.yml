@@ -19,12 +19,21 @@ jobs:
       - name: ✅ Checkout repository
         uses: actions/checkout@v4
 
-      - name: 🧹 Remove files that should not be uploaded
+      - name: ⚙️ Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: 📦 Install dependencies
+        run: npm install
+
+      - name: 🔧 Build Angular project
+        run: npm run build
+
+      - name: 🧹 Remove unnecessary files
         run: |
           rm -rf .git
           rm -rf .github
-          rm -f .gitignore
-          rm -f README.md
 
       - name: 📤 Deploy via SFTP
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
@@ -33,7 +42,7 @@ jobs:
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           port: 22
-          local_path: ./
+          local_path: ./dist/andyb/browser/
           remote_path: /home/A/andrebajercom/www
           sftp_only: true
-          delete_remote_files: false
+          delete_remote_files: true
