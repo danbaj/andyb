@@ -1,12 +1,18 @@
-.frame {
+.home-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ── Hero ── */
+.hero {
+  text-align: center;
   border: 3px solid var(--gold-border);
   outline: 1px solid var(--gold-border);
   outline-offset: -8px;
-  padding: 60px 80px;
   background-color: var(--green-panel);
-  text-align: center;
-  max-width: 520px;
-  margin: 60px auto;
+  padding: 60px 80px;
+  margin-bottom: 60px;
 }
 
 .ornament {
@@ -17,13 +23,6 @@
   margin-bottom: 12px;
 }
 
-.divider {
-  width: 60%;
-  margin: 24px auto;
-  border: none;
-  border-top: 1px solid var(--gold-border);
-}
-
 h1 {
   font-size: 2.8rem;
   font-weight: 600;
@@ -32,46 +31,85 @@ h1 {
   line-height: 1.2;
 }
 
-.subtitle {
+.intro {
   font-size: 1.1rem;
   color: var(--text-primary);
-  letter-spacing: 2px;
-}
-
-.contact-label {
-  font-size: 0.85rem;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 8px;
-}
-
-.contact-link {
-  font-size: 1.1rem;
-  color: var(--text-primary);
-  text-decoration: underline;
-  text-underline-offset: 6px;
   letter-spacing: 1px;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.contact-link:hover {
+/* ── Divider ── */
+.divider {
+  width: 60%;
+  margin: 24px auto;
+  border: none;
+  border-top: 1px solid var(--gold-border);
+}
+
+/* ── Section ── */
+.section {
+  background-color: var(--green-panel);
+  border: 1px solid var(--gold-border);
+  padding: 40px;
+}
+
+h2 {
+  font-size: 1.6rem;
   color: var(--gold);
+  letter-spacing: 3px;
+  text-align: center;
 }
 
-.contact-link:focus-visible {
-  outline: 3px solid var(--gold);
-  outline-offset: 6px;
-  border-radius: 2px;
+/* ── Content Row ── */
+.content-row {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-top: 32px;
 }
 
-@media (max-width: 480px) {
-  .frame {
+.image-column img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border: 1px solid var(--gold-border);
+  display: block;
+}
+
+.text-column {
+  flex: 1;
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.text-column p {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  line-height: 1.8;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .hero {
     padding: 40px 24px;
-    margin: 40px auto;
   }
 
   h1 {
     font-size: 2rem;
-    letter-spacing: 2px;
+  }
+
+  .content-row {
+    flex-direction: column;
+  }
+
+  .section {
+    padding: 24px 16px;
   }
 }

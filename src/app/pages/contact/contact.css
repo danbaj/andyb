@@ -1,0 +1,111 @@
+.contact-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 2.4rem;
+  color: var(--gold);
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+.divider {
+  width: 60%;
+  margin: 32px auto;
+  border: none;
+  border-top: 1px solid var(--gold-border);
+}
+
+/* ── Content Row ── */
+.content-row {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+/* ── Image ── */
+.image-column img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  border: 1px solid var(--gold-border);
+  display: block;
+}
+
+/* ── Contact Card ── */
+.text-column {
+  flex: 1;
+}
+
+.contact-card {
+  border: 3px solid var(--gold-border);
+  outline: 1px solid var(--gold-border);
+  outline-offset: -8px;
+  background-color: var(--green-panel);
+  padding: 40px;
+  text-align: center;
+}
+
+.ornament {
+  display: block;
+  color: var(--gold-border);
+  font-size: 1rem;
+  letter-spacing: 8px;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: 1.4rem;
+  color: var(--gold);
+  letter-spacing: 3px;
+}
+
+.card-divider {
+  width: 60%;
+  margin: 20px auto;
+  border: none;
+  border-top: 1px solid var(--gold-border);
+}
+
+.contact-label {
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.contact-link {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  letter-spacing: 1px;
+}
+
+.contact-link:hover {
+  color: var(--gold);
+}
+
+.contact-link:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 6px;
+  border-radius: 2px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .content-row {
+    flex-direction: column;
+  }
+
+  .contact-card {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
