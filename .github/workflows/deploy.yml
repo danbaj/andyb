@@ -39,5 +39,6 @@ jobs:
             ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }} << 'SFTP'
             cd /home/A/andrebajercom/www
             mput *
+            put .htaccess
             bye
           SFTP
