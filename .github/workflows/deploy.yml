@@ -42,3 +42,17 @@ jobs:
             put .htaccess
             bye
           SFTP
+
+        - name: 🖼️ Deploy images via SFTP
+        env:
+          SSHPASS: ${{ secrets.SFTP_PASSWORD }}
+        run: |
+          sshpass -e sftp -o StrictHostKeyChecking=no \
+            ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }} << 'SFTP'
+            cd /home/A/***/www
+            mkdir images
+            cd images
+            lcd dist/andyb/images
+            mput *
+            bye
+          SFTP
