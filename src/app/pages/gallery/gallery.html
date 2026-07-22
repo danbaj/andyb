@@ -1,1 +1,51 @@
-<p>gallery works!</p>
+<section class="gallery-page">
+  <h1>Gallery</h1>
+  <hr class="divider">
+
+  <!-- Gallery Grid -->
+  <div class="gallery-grid" role="list">
+    @for (image of images; track image.src; let i = $index) {
+      <div class="gallery-item" role="listitem">
+        <button
+          (click)="openLightbox(i)"
+          [attr.aria-label]="'View: ' + image.title"
+          class="gallery-btn">
+          <img
+            [src]="image.src"
+            [alt]="image.alt"
+            loading="lazy"
+            width="400"
+            height="300">
+          <span class="image-title">{{ image.title }}</span>
+        </button>
+      </div>
+    }
+  </div>
+
+  <!-- Lightbox -->
+  @if (selectedImage) {
+    <div
+      class="lightbox"
+      role="dialog"
+      aria-modal="true"
+      [attr.aria-label]="selectedImage.title"
+      (keydown)="onKeydown($event)"
+      tabindex="0">
+
+      <div class="lightbox-backdrop" (click)="closeLightbox()"></div>
+
+      <div class="lightbox-content">
+        <img
+          [src]="selectedImage.src"
+          [alt]="selectedImage.alt">
+        <p class="lightbox-title">{{ selectedImage.title }}</p>
+        <p class="lightbox-counter">{{ selectedIndex + 1 }} / {{ images.length }}</p>
+      </div>
+
+      <!-- Controls -->
+      <button class="lightbox-close" (click)="closeLightbox()" aria-label="Close">✕</button>
+      <button class="lightbox-prev"  (click)="prev()"          aria-label="Previous">‹</button>
+      <button class="lightbox-next"  (click)="next()"          aria-label="Next">›</button>
+    </div>
+  }
+</section>
