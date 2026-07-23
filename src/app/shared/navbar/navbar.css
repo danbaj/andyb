@@ -1,7 +1,8 @@
 header {
   background-color: var(--green-dark);
   border-bottom: 2px solid var(--gold-border);
-  padding: 0 40px;
+  padding: 0 20px;
+  width: 100%;
 }
 
 nav {
@@ -11,11 +12,13 @@ nav {
   max-width: 960px;
   margin: 0 auto;
   height: 64px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .brand {
   font-family: 'Cinzel', serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--gold);
   letter-spacing: 3px;
 }
@@ -23,14 +26,15 @@ nav {
 ul {
   list-style: none;
   display: flex;
-  gap: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
   margin: 0;
   padding: 0;
 }
 
 a {
   font-family: 'Cinzel', serif;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--text-primary);
@@ -54,7 +58,11 @@ a:focus-visible {
 }
 
 @media (max-width: 480px) {
-  header { padding: 0 16px; }
+  nav {
+    height: auto;
+    padding: 12px 0;
+  }
+
   .brand { font-size: 1rem; }
-  ul { gap: 16px; }
+  ul { gap: 12px; }
 }

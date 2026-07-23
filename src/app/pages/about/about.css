@@ -1,11 +1,10 @@
 .about-page {
-  max-width: 960px;
-  margin: 0 auto;
+  width: 100%;
   padding: 40px 20px;
 }
 
 h1 {
-  font-size: 2.4rem;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
   color: var(--gold);
   letter-spacing: 4px;
   text-align: center;
@@ -18,28 +17,17 @@ h1 {
   border-top: 1px solid var(--gold-border);
 }
 
-/* ── Content Row ── */
 .content-row {
   display: flex;
-  gap: 40px;
-  align-items: center;
+  flex-direction: column;
+  gap: 24px;
   margin-bottom: 16px;
-}
-
-.content-row.reverse {
-  flex-direction: row-reverse;
-}
-
-/* ── Images ── */
-.image-column {
-  flex: 1;
 }
 
 .image-column img {
   width: 100%;
   height: auto;
   border: 1px solid var(--gold-border);
-  display: block;
 }
 
 .image-column.multi {
@@ -48,13 +36,8 @@ h1 {
   gap: 16px;
 }
 
-/* ── Text ── */
-.text-column {
-  flex: 1;
-}
-
 h2 {
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
   color: var(--gold);
   letter-spacing: 2px;
   margin-bottom: 20px;
@@ -63,19 +46,23 @@ h2 {
 }
 
 p {
-  font-size: 1.05rem;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
   color: var(--text-primary);
   line-height: 1.8;
 }
 
-/* ── Responsive ── */
-@media (max-width: 700px) {
-  .content-row,
-  .content-row.reverse {
-    flex-direction: column;
+@media (min-width: 700px) {
+  .content-row {
+    flex-direction: row;
+    align-items: center;
   }
 
-  h1 {
-    font-size: 1.8rem;
+  .content-row.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .image-column,
+  .text-column {
+    flex: 1;
   }
 }

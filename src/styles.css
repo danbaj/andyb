@@ -6,6 +6,12 @@
   box-sizing: border-box;
 }
 
+/* ── Prevents horizontal scroll globally ── */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 :root {
   --gold:         #f0c060;
   --gold-border:  #c9a84c;
@@ -26,5 +32,13 @@ body {
 main {
   max-width: 960px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+/* ── Global image rule ── */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
