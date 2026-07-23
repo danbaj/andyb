@@ -16,11 +16,27 @@ nav {
   gap: 8px;
 }
 
-.brand {
+/* ── Brand as link ── */
+a.brand {
   font-family: 'Cinzel', serif;
   font-size: 1.1rem;
   color: var(--gold);
   letter-spacing: 3px;
+  text-decoration: none;
+  border-bottom: none;
+  transition: opacity 0.2s;
+}
+
+a.brand:hover {
+  opacity: 0.8;
+  color: var(--gold);
+  border-bottom: none;
+}
+
+a.brand:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 ul {
@@ -63,6 +79,6 @@ a:focus-visible {
     padding: 12px 0;
   }
 
-  .brand { font-size: 1rem; }
+  a.brand { font-size: 1rem; }
   ul { gap: 12px; }
 }
